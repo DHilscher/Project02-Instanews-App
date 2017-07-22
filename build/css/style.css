@@ -91,3 +91,29 @@ body {
       -webkit-box-flex: 1;
           -ms-flex: 1 0 auto;
               flex: 1 0 auto; }
+
+.stories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .stories div {
+    color: white;
+    width: 100%;
+    position: relative;
+    max-width: 100%; }
+  .stories img {
+    position: relative;
+    max-width: 100%;
+    width: 100%; }
+  .stories a {
+    color: white;
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 100%;
+    padding-top: 25%; }

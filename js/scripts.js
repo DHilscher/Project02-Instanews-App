@@ -1,24 +1,33 @@
-$(function() {
-    $('.drop-down').on('change', function() {  
+$(document).ready(function () {
+    $('.drop-down').on('change', function () {
         var stories = $(this).val();
         var url = 'https://api.nytimes.com/svc/topstories/v2/' + stories + '.json';
-        console.log(url);
-        
+
         url += '?' + $.param({
-        'api-key': "1dea2f5cd03e4217bc34ba95f65d5c90"
+            'api-key': '1dea2f5cd03e4217bc34ba95f65d5c90'
         });
         $.ajax({
             url: url,
             method: 'GET',
-        }).done(function(data) {
-            $.each(data.results,function(key,value){
-            $(".stories").append()
-        }).fail(function(err) {
-            throw err;
+        }).done(function (data) {
+            $.each(data.results, function (key, value) {
+            var imageURL = value.multimedia[4].url;
+            var articleLink = value.url;
+            var articleText = value.abstract;
+        console.log(data)
+
+
+            $(".stories").append('<div>' + '<img src="' + imageURL + '">' + '<a href="' + articleLink + '">' + articleText + '</a>' + '</div>')
+            // $(".stories").append('<img src="' + imageURL + '">')
+            // $(".stories").append('<div>' + articleText + '</div>')
+
+
+
+
+            })
+                
+            }).fail(function () {
+        console.log('Hello!')
         });
     });
-});
-
-
-
-
+})
