@@ -5,6 +5,7 @@
 body {
     background-color: #000;
     text-align: center;
+    color: white;
     .container {
         display: flex;
         flex-direction: column;
@@ -35,22 +36,27 @@ body {
         width: 100%;
         position: relative;
         max-width: 100%;
+        img {  
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+        }   
+        a {
+            color: white;
+            position: absolute;
+            width: 100%;
+            max-width: 100%;
+            padding-top: 100%;
         
+        }
+        p {
+            color: white;
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            max-width: 100%;
+            background: rgba(0,0,0,.6);
+        }
     }
-    img {
-        position: relative;
-        max-width: 100%;
-        width: 100%;
-    }
-    a {
-        color: white;
-        position: absolute;
-        top: 66%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        max-width: 100%;
-        padding-top: 25%;
-        
-    }
+    
 }

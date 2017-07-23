@@ -17,7 +17,7 @@ $(document).ready(function () {
         console.log(data)
 
 
-            $(".stories").append('<div>' + '<img src="' + imageURL + '">' + '<a href="' + articleLink + '">' + articleText + '</a>' + '</div>')
+            $(".stories").append('<div>' + '<img src="' + imageURL + '">' + '<a href="' + articleLink + '"></a>' +'<p>' + articleText + '</p>' + '</div>')
             // $(".stories").append('<img src="' + imageURL + '">')
             // $(".stories").append('<div>' + articleText + '</div>')
 

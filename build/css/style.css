@@ -74,7 +74,8 @@ table {
 
 body {
   background-color: #000;
-  text-align: center; }
+  text-align: center;
+  color: white; }
   body .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -103,17 +104,20 @@ body {
     width: 100%;
     position: relative;
     max-width: 100%; }
-  .stories img {
-    position: relative;
-    max-width: 100%;
-    width: 100%; }
-  .stories a {
-    color: white;
-    position: absolute;
-    top: 66%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 100%;
-    padding-top: 25%; }
+    .stories div img {
+      position: relative;
+      max-width: 100%;
+      width: 100%; }
+    .stories div a {
+      color: white;
+      position: absolute;
+      width: 100%;
+      max-width: 100%;
+      padding-top: 100%; }
+    .stories div p {
+      color: white;
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      max-width: 100%;
+      background: rgba(0, 0, 0, 0.6); }
