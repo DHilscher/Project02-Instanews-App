@@ -40,14 +40,14 @@ body {
             position: relative;
             max-width: 100%;
             width: 100%;
+            height: 420px;
+            object-fit: cover;
         }   
         a {
             color: white;
-            position: absolute;
+            position: relative;
             width: 100%;
-            max-width: 100%;
-            padding-top: 100%;
-        
+            max-width: 100%;        
         }
         p {
             color: white;
