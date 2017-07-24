@@ -6,28 +6,34 @@ $(document).ready(function () {
         url += '?' + $.param({
             'api-key': '1dea2f5cd03e4217bc34ba95f65d5c90'
         });
+
         $.ajax({
             url: url,
             method: 'GET',
-        }).done(function (data) {
-            $.each(data.results, function (key, value) {
-            var imageURL = value.multimedia[4].url;
-            var articleLink = value.url;
-            var articleText = value.abstract;
-        console.log(data)
+        })
 
+        .done(function (data) {
 
-            $(".stories").append('<div>' + '<a href="' + articleLink + '" target="_blank">' + '<img src="' + imageURL + '"></a>' +'<p>' + articleText + '</p>' + '</div>')
-            // $(".stories").append('<div>' + '<img src="' + imageURL + '">' + '<a href="' + articleLink + '"></a>' +'<p>' + articleText + '</p>' + '</div>')
-            // $(".stories").append('<img src="' + imageURL + '">')
-            // $(".stories").append('<div>' + articleText + '</div>')
+            $('.newsStories').remove();
 
+            var storyItems = '';
 
+            var storiesWithMultimedia = data.results.filter(function(storyData){
+                return storyData.multimedia.length > 0
+            }).slice(0, 12);
 
-
-            })
+            $.each(storiesWithMultimedia, function (key, value) {    
+                storyItems += '<div class="newsStories">';
+                storyItems += '<a href="' + value.url + '" target="_blank">';
+                storyItems += '<img src="' + value.multimedia[4].url + '"></a>';
+                storyItems += '<p>' + value.abstract + '</p>';
+                storyItems += '</div>';
+            
+            });
+            $('.stories').append(storyItems);
                 
-            }).fail(function () {
+        })
+        .fail(function () {
         console.log('Hello!')
         });
     });
