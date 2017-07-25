@@ -21,18 +21,35 @@ body {
             justify-content: center;
             padding-top: 11rem;
             .logo {
-                
-                
+                @include tablet {
+                    text-align: left;
+                    } 
+                img {
+                    @include tablet {
+                        width: 22.335%;
+                        transform: translate(70%, 33%);
+                    } 
+                }
             }
             
             form {
-                padding-bottom: 200px;
-            
+                padding-bottom: 12.5rem;
+                .drop-down {
+                    width: 8rem;
+                    font-size: 1.1rem;
+                    @include tablet {
+                        transform: translate(5%, -276%);
+                    }
+                }
             }
 
             p {
                 padding: 1rem 0;
                 font-size: .8rem;
+                @include tablet {
+                    font-size: .9rem;
+                    transform: translate(0%,-164%);
+                } 
                 
             }
         
@@ -43,27 +60,51 @@ body {
 }
 
 body {
-    .container {
-        .newHeader {
-           
-            padding-bottom: 5.2rem;
+    .newContainer {
+        height: auto;
+        .header {
+            padding-top: 2rem;
+            @include tablet {
+                padding-bottom: 0;
+                padding-top: 1.7rem;
+            }
             .logo {
-                padding-top: 5rem;
+                
                 img {
                     width: 37.5%;
-                }
-                
+                    @include tablet {
+                        width: 11.167%;
+                        transform: translate(136%,8%);
+                    } 
+                }   
             }
             
             form {
-            
+                padding-bottom: 3.4375rem;
+                @include tablet {
+                    padding-bottom: 0;
+                }
+                .drop-down {
+                @include tablet {
+                    transform: translate(5%,-184%);
+                }    
+                }
             }
 
             p {
-               
+                @include tablet {
+                    padding: 0;
+                    transform: translate(0%,-460%);
+                }
                 
             }
         
+        }
+        .footer {
+            padding-top: 8%;
+            @include tablet {
+                padding: 5% 0 8% 0;
+            }
         }
 
         
@@ -78,6 +119,10 @@ body {
         width: 100%;
         position: relative;
         max-width: 100%;
+        
+        @include tablet {
+            flex-basis: 50%;
+        }
         img {  
             position: relative;
             max-width: 100%;
@@ -111,24 +156,15 @@ body {
     padding-bottom: 11.5%;
     color: $footer-color;
     font-size: .9rem;
+    @include tablet {
+        padding-bottom: 8%;
+    }
     .copyright {
         
         p {
            
             span {
                 text-transform: uppercase;
-            }
-        }
-    }
-}
-
-.newFooter {
-    padding-bottom: 11.5%;
-    .copyright {
-        
-        p {
-           
-            span {
             }
         }
     }

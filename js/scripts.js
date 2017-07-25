@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.drop-down').on('change', function () {
-        $('.header').addClass('newHeader');
-        $('.footer').addClass('newFooter');
+        $('.container').addClass('newContainer');
+        
         var stories = $(this).val();
         var url = 'https://api.nytimes.com/svc/topstories/v2/' + stories + '.json';
 
