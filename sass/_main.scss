@@ -28,6 +28,10 @@ body {
                     @include tablet {
                         width: 22.335%;
                         transform: translate(70%, 33%);
+                    }
+                    @include desktop {
+                        width: 22%;
+                        transform: translate(15%,30%);
                     } 
                 }
             }
@@ -40,6 +44,10 @@ body {
                     @include tablet {
                         transform: translate(5%, -276%);
                     }
+                    @include desktop {
+                        transform: translate(-125%,-380%);
+                        width: 7.813rem;
+                    } 
                 }
             }
 
@@ -49,6 +57,11 @@ body {
                 @include tablet {
                     font-size: .9rem;
                     transform: translate(0%,-164%);
+                } 
+                @include desktop {
+                    transform: translate(-15.5%,-206%);
+                    font-size: 1rem;
+                    line-height: 1rem;
                 } 
                 
             }
@@ -75,6 +88,10 @@ body {
                     @include tablet {
                         width: 11.167%;
                         transform: translate(136%,8%);
+                    }
+                    @include desktop {
+                        width: 4.1875rem;
+                        transform: translate(49%,8%);
                     } 
                 }   
             }
@@ -87,6 +104,9 @@ body {
                 .drop-down {
                 @include tablet {
                     transform: translate(5%,-184%);
+                }
+                @include desktop {
+                    transform: translate(-205%,-184%);
                 }    
                 }
             }
@@ -96,7 +116,9 @@ body {
                     padding: 0;
                     transform: translate(0%,-460%);
                 }
-                
+                @include desktop {
+                    transform: translate(-25.5%,-403%);
+                } 
             }
         
         }
@@ -104,6 +126,9 @@ body {
             padding-top: 8%;
             @include tablet {
                 padding: 5% 0 8% 0;
+            }
+            @include desktop {
+                padding-top: 0;
             }
         }
 
@@ -122,6 +147,9 @@ body {
         
         @include tablet {
             flex-basis: 50%;
+        }
+        @include desktop {
+            flex-basis: 25%;
         }
         img {  
             position: relative;
@@ -159,10 +187,15 @@ body {
     @include tablet {
         padding-bottom: 8%;
     }
+    @include desktop {
+        text-align: left;
+    }
     .copyright {
         
         p {
-           
+            @include desktop {
+                transform: translate(3.2%,226%);
+            }
             span {
                 text-transform: uppercase;
             }
