@@ -100,10 +100,20 @@ body {
               flex-direction: column;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
-              justify-content: center; }
+              justify-content: center;
+      padding-top: 11rem; }
+      body .container .header form {
+        padding-bottom: 200px; }
       body .container .header p {
         padding: 1rem 0;
         font-size: .8rem; }
+
+body .container .newHeader {
+  padding-bottom: 5.2rem; }
+  body .container .newHeader .logo {
+    padding-top: 5rem; }
+    body .container .newHeader .logo img {
+      width: 37.5%; }
 
 .stories {
   display: -webkit-box;
@@ -146,3 +156,6 @@ body {
   font-size: .9rem; }
   .footer .copyright p span {
     text-transform: uppercase; }
+
+.newFooter {
+  padding-bottom: 11.5%; }

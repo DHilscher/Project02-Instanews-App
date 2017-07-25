@@ -19,18 +19,48 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            .logo{
+            padding-top: 11rem;
+            .logo {
                 
                 
             }
             
-            .drop-down{
+            form {
+                padding-bottom: 200px;
             
             }
 
             p {
                 padding: 1rem 0;
                 font-size: .8rem;
+                
+            }
+        
+        }
+
+        
+    }
+}
+
+body {
+    .container {
+        .newHeader {
+           
+            padding-bottom: 5.2rem;
+            .logo {
+                padding-top: 5rem;
+                img {
+                    width: 37.5%;
+                }
+                
+            }
+            
+            form {
+            
+            }
+
+            p {
+               
                 
             }
         
@@ -87,6 +117,18 @@ body {
            
             span {
                 text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.newFooter {
+    padding-bottom: 11.5%;
+    .copyright {
+        
+        p {
+           
+            span {
             }
         }
     }
