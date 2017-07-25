@@ -1,5 +1,7 @@
 $(document).ready(function () {
     $('.drop-down').on('change', function () {
+        $('.loaderimg').show();
+        $('.stories').hide();
         $('.container').addClass('newContainer');
         
         var stories = $(this).val();
@@ -37,5 +39,7 @@ $(document).ready(function () {
         })
         .fail(function () {
         });
+        $('.loaderimg').hide(1500);
+        $('.stories').show();
     });
 })

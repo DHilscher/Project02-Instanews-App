@@ -195,6 +195,12 @@ body .newContainer {
       body .newContainer .footer {
         padding-top: 0; } }
 
+.loader img {
+  width: 4%;
+  display: none;
+  z-index: 99;
+  position: absolute; }
+
 .stories {
   display: -webkit-box;
   display: -ms-flexbox;

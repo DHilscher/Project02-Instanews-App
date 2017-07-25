@@ -136,6 +136,15 @@ body {
     }
 }
 
+.loader {
+    img {
+        width: 4%;
+        display: none;
+        z-index: 99;
+        position: absolute;
+    }
+}
+
 .stories {
     display: flex;
     flex-wrap: wrap;
