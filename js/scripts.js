@@ -1,43 +1,38 @@
-$(document).ready(function () {
-    $('.drop-down').on('change', function () {
+$(document).ready(() => {
+    $('.drop-down').on('change', () => {
         $('.loaderimg').show();
         $('.stories').hide();
         $('.container').addClass('newContainer');
         
-        var stories = $(this).val();
-        var url = 'https://api.nytimes.com/svc/topstories/v2/' + stories + '.json';
-
-        url += '?' + $.param({
-            'api-key': '1dea2f5cd03e4217bc34ba95f65d5c90'
-        });
+        const stories = $(event.currentTarget).val();
+        const url = `https://api.nytimes.com/svc/topstories/v2/
+${stories}.json?api-key=1dea2f5cd03e4217bc34ba95f65d5c90`;
 
         $.ajax({
-            url: url,
+            url,
             method: 'GET',
         })
 
-        .done(function (data) {
-
+        .done((data) => {
             $('.newsStories').remove();
 
-            var storyItems = '';
+            let storyItems = '';
 
-            var storiesWithMultimedia = data.results.filter(function(storyData){
+            let storiesWithMultimedia = data.results.filter((storyData) => {
                 return storyData.multimedia.length > 0
             }).slice(0, 12);
 
-            $.each(storiesWithMultimedia, function (key, value) {    
-                storyItems += '<div class="newsStories">';
-                storyItems += '<a href="' + value.url + '" target="_blank">';
-                storyItems += '<img src="' + value.multimedia[4].url + '"></a>';
-                storyItems += '<p>' + value.abstract + '</p>';
-                storyItems += '</div>';
+            $.each(storiesWithMultimedia, (key, value) => {    
+                storyItems += `<div class="newsStories">
+                <a href="${value.url}" target="_blank">
+                <img src="${value.multimedia[4].url}"></a>
+                <p>${value.abstract}</p></div>`;
             
             });
             $('.stories').append(storyItems);
                 
         })
-        .fail(function () {
+        .fail(() => {
         });
         $('.loaderimg').hide(1500);
         $('.stories').show();

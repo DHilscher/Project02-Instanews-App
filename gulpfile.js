@@ -1,24 +1,24 @@
-var gulp = require('gulp'),
-    prettyError = require('gulp-prettyerror'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    watch = require('gulp-watch'),
-    browserSync = require('browser-sync').create(),
-    eslint = require('gulp-eslint'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano');
+const gulp = require('gulp'),
+      prettyError = require('gulp-prettyerror'),
+      uglify = require('gulp-uglify'),
+      rename = require('gulp-rename'),
+      watch = require('gulp-watch'),
+      browserSync = require('browser-sync').create(),
+      eslint = require('gulp-eslint'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cssnano = require('gulp-cssnano'),
+      babel = require('gulp-babel');
 
 gulp.task('scripts', ['eslint'], function(){
     gulp.src('./js/*.js')
+    .pipe(babel({
+        presets: ['es2015']
+    }))
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js'}))
     .pipe(gulp.dest('./build/js'))
 });
-
-// gulp.task('say_hello', function() {
-//     console.log('hello');
-// });
 
 gulp.task('eslint', () => { 
     return gulp.src(['js/*.js','!node_modules/**']) 
